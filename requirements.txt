@@ -1,0 +1,7 @@
+matplotlib==3.3.4
+numpy
+opencv_python
+Pillow
+scikit_image
+scikit_learn
+scipy
