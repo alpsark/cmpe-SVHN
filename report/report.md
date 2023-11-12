@@ -8,7 +8,7 @@ csl : ieee.csl
 
 # CMPE 544 Project-Phase 1
 
-
+Code location [https://github.com/alpsark/cmpe-SVHN](https://github.com/alpsark/cmpe-SVHN), note [test_32x32.mat](http://ufldl.stanford.edu/housenumbers/test_32x32.mat) and [train_32x32.mat](http://ufldl.stanford.edu/housenumbers/train_32x32.mat) needs to be downloaded because they were too large to put in git. 
 
 
 ## 1 Dataset
@@ -142,14 +142,10 @@ I will use all of the reduced features combined as a feature for classification.
 
 **For the features of your choice, investigate if there are any classes with low intra-class and high inter-class similarities. Detect the problematic categories that might lead to misclassification errors, if there are any.**
 
-[comment]: <> (Intra-class similarity: This refers to the similarity between samples within the same class. In a classification problem, if two samples belong to the same class ;for example, two images of the digit "3" in the MNIST dataset;, the measure of their similarity defines the intra-class similarity. High intra-class similarity means that samples within the same class are more alike, sharing common characteristics or features.)
-
-[comment]: <>  (Inter-class similarity: This refers to the similarity between samples from different classes. In a classification problem, the measure of similarity between samples from distinct classes determines the inter-class similarity. Low inter-class similarity is desired, indicating that samples from different classes are dissimilar and have distinct features that allow for accurate classification.)
-
 I have used Euclidean distance ( $||u - v||_{2}=\sqrt{\sum{(u_i - v_i)^2}}$ ) as metric for similarity. Heatmap of the distances are given below: 
 
 * Roberts  
-Roberts can distinguish the 2,3,5,6 and 8 very well.  However 7 and 1 are mixing up with each other. 9 is mixed up as 8.   10 is not distinguishable at all.   
+Roberts can distinguish the 2,3,5,6 and 8 very well.  However 7 and 1 are mixing up with each other. 9 is mixed up as 8.   10 is not distinguishable at all.     
 ![](heatmap_roberts.png)  
 * LBP    
 LBP on the other hand can distinguish 7s and 1s from each other. In fact it is the most distinguishable pair.   
@@ -190,11 +186,8 @@ Hyperparameters are tuned through cross-validation.
 
 #### Linear - Support Vector Machine (SVM) Linear Kernel:
 
-#### Linear - Perceptron Function::
 
-
-###  nonlinear - Radial Basis Function (RBF) Kernel
-
+Code is there but didnt have time for meaningful outputs and try with different epocs.
 
 **(10 pts) Do you observe underfitting? Please suggest ways to overcome it and apply your suggestions. If necessary, you may go back to exploring better feature extraction techniques at this point. Please report the changes you made in the feature extraction part. If you observe overfitting, please use regularization to overcome it. Please repeat (2) with the regularized models.**
 
@@ -213,8 +206,10 @@ My loss function is (f is the feature vector):
 
 $$ L (f) =  \sum_{i}{(\sum_{j=i(i=j)}||f(i) - f(j)||_2 - \sum_{j=i(i\ne j)}||f(i) - f(j)||_2)} $$
 
+Distance metric learning framework is the similar to single layer neural network without any activation function. This is why I have coded as such. 
+I have coded a stochastic gradient descent as an iterator of weights. So overall metric learning framework uses gradient descent algorithm to optimize weight to find the best loss function. weight are the projection matrix to change feature vector dimensions. 
 
-
+Code is there but I didnt have time for meaningful outputs.
  **(10 pth) Train your metric learning framework with the training split of SVHN. Apply the learned projection onto SIFT features of the training and test splits. Then, train the best classifier from Section 3 with the new features and report the performance. Could you improve the performance**
 
 
