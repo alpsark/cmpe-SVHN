@@ -92,12 +92,12 @@ Grayscale (Base feature):
 ![](shitom.png) ![](mi_shitom.png)
 1) Other Filters
     1) Hessian filter  
-![](hessian.png) ![](mi_hessian.png)  
-    2) Meijering filter  
+![](hessian.png) ![](mi_hessian.png)
+    1) Meijering filter  
 ![](meijering.png) ![](mi_meijering.png)  
-    3) sato filter  
+    1) sato filter  
 ![](sato.png) ![](mi_sato.png)  
-    4) frangi filter  
+    1) frangi filter  
 ![](frangi.png) ![](mi_frangi.png)  
     1) **gabor filter **   
 ![](gabor.png) ![](mi_gabor.png)  
